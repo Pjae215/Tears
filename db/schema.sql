@@ -1,0 +1,16 @@
+
+DROP DATABASE IF EXISTS chivalry_db;
+
+CREATE DATABASE chivalry_db;
+
+USE chivalry_db;
+
+CREATE TABLE users(
+
+id VARCHAR(1000) NOT NULL AUTO_INCREMENT,
+email VARCHAR(50) NOT NULL,
+sex VARCHAR(50) NOT NULL,
+
+PRIMARY KEY (id)
+
+);
