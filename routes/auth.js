@@ -1,5 +1,14 @@
 //Implement login, user profile and logout
 //Adding the authentication router
+//In the authentication step, make sure to pass the scope parameter 
+//with values openid email profile to access email and the other attributes 
+//stored in the user profile. This is needed to display the user's information on the profile page.
+//In this example, following routes are implemented:
+
+//  /login triggers the authentication by calling Passport's authenticate method. The user is then redirected to the tenant login page hosted by Auth0.
+//  /callback is the route the user is returned to by Auth0 after authenticating. It redirects the user to the profile page (/user).
+//  /user displays the user's profile.
+//  /logout logs the user out of Auth0.
 
 // routes/auth.js
 var express = require('express');
