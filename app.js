@@ -1,4 +1,5 @@
 //copied from auth0 documentation page https://auth0.com/docs/quickstart/webapp/nodejs
+//need assistance with the portion titled Middleware to protect routes
 
 //Configure express-session
 var session = require('express-session');
