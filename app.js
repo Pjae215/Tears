@@ -64,3 +64,19 @@ passport.serializeUser(function (user, done) {
   passport.deserializeUser(function (user, done) {
     done(null, user);
   });
+
+  //Include the new routers and the userInViews middleware in your app:
+
+  // app.js
+
+var userInViews = require('./lib/middleware/userInViews');
+var authRouter = require('./routes/auth');
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+// ..
+app.use(userInViews());
+app.use('/', authRouter);
+app.use('/', indexRouter);
+app.use('/', usersRouter);
+// ..
