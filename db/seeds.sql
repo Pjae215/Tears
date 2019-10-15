@@ -1,9 +1,6 @@
-INSERT INTO burgers
-(burger_name, devoured)
+INSERT INTO users
+(col1, col2)
 
 VALUES
-("Impossible Burger", false),
-("Double Bacon Burger", false),
-("Veggie Burger", false),
-("Kids Cheeseburger", false),
-("Plain Hamburger",true);
+("val1", "val2"),
+("val2", "val2")
