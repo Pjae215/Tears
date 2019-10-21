@@ -1,30 +1,18 @@
+//exports of routes for passport authentication
 var exports = module.exports = {}
  
- 
+
 exports.signup = function(req, res) {
+res.render('signup');}
  
-    res.render('signup');
- 
-}
- 
-exports.signin = function(req, res) {
- 
-    res.render('signin');
- 
-}
+exports.login = function(req, res) {
+res.render('login');}
  
  
 exports.dashboard = function(req, res) {
- 
-    res.render('dashboard');
- 
-}
+res.render('dashboard');}
+
+
 exports.logout = function(req, res) {
- 
-    req.session.destroy(function(err) {
- 
-        res.redirect('/');
- 
-    });
- 
-}
+req.session.destroy(function(err) {
+res.redirect('/'); });}

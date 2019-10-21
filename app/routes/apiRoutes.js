@@ -1,92 +1,108 @@
-// Requiring our models and passport as we've configured it
+// Requiring 
 var db = require("../models");
 var passport = require("../config/passport/passport");
 
-module.exports = function(app) {
-    // Using the passport.authenticate middleware with our local strategy.
-    // If the user has valid login credentials, send them to the members page.
-    // Otherwise the user will be sent an error
-    app.post("/api/login", passport.authenticate("local"), function(req, res) {
-        // console.log(req.user)
-        res.json(req.user);
-    });
 
-    // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-    // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-    // otherwise send back an error
-    app.post("/api/signup", function(req, res) {
-        console.log("API");
+
+module.exports = function(app) {
+//Using the passport.authenticate middleware with our local strategy.
+//Validated users returns profile data
+    app.post("/api/login", passport.authenticate("local"), function(req, res) {
+        console.log(req.User);
+    res.json(db.Profile); });
+
+//Route for logging user out
+    app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
+    });
+        
+//Validated new user sends login data to db
+    app.post("/api/signup", passport.authenticate("local"), function(req, res) {
+        console.log("signingup");
         db.User.create({
-                name: req.body.name,
-                sign: req.body.sign,
                 email: req.body.email,
-                password: req.body.password
+                password: req.body.password,
+                username: req.body.username,
+                birthday: req.body.dob,
+                gender: req.body.gender,
+                status: req.body.status
             })
-            .then(function() {
-                console.log("here");
-                res.render("members");
+        .then(function(data) {
+                console.log(req.User);
+                db.Prefs.create({
+                    email: req.body.email,      //will be key to connect tables
+                    kids1: req.body.kids1,      //want to make them choose 2, give option for not important
+                    kids2: req.body.kids2,   //want to make them choose 2, give option for not important
+                    race1: req.body.race1,   //want to make them choose 2, give option for not important
+                    race2: req.body.race2,        //want to make them choose 2, give option for not important
+                    agegroup: req.body.agegroup,  //give age ranges and assign a value to each range
+                    religion1: req.body.religion   //just creating a functioning db/route for now
+                });
+                res.json(data);
             })
-            .catch(function(err) {
+        .catch(function(err) {
                 console.log(err);
                 res.status(401).json(err);
             });
     });
 
-    // Route for logging user out
-    app.get("/logout", function(req, res) {
-        req.logout();
-        res.redirect("/login");
-    });
-
-    // Route for getting some data about our user to be used client side
-    app.get("/api/user_data", function(req, res) {
-        if (!req.user) {
-            // The user is not logged in, send back an empty object
-            res.json({});
-        } else {
-            // Otherwise send back the user's email and id
-            // Sending back a password, even a hashed password, isn't a good idea
-            res.json({
-                name: req.user.name,
-                sign: req.user.sign,
-                email: req.user.email,
-                id: req.user.id
-            });
-        }
-    });
-
-    app.get("/api/getsign", function(req, res) {
-
-        if (req.user) {
-            console.log("HIT API GETSIGN")
-            console.log("Looking up User " + req.user)
-            db.User.findOne({
-                where: { email: req.user.email }
-            }).then(function(data) {
-                // console.log(data)
-                res.json(data)
+//For updating preferences
+    app.put("/api/prefs", function(req, res) {
+        console.log("change");
+        db.Prefs.update(
+            req.body,
+            {where:{
+                email: req.body.email
+            }})
+        .then(function() {
+            console.log(db.email);
+            res.json(db.Prefs);
             })
-        } else {
-            console.log("HIT API GETSIGN NO USER")
-            res.end()
-        }
-    })
+        .catch(function(err) {
+            console.log(err);
+            res.status(401).json(err);
+            });
+    });
 
-    app.post("/api/chivalry", function(req, res) {
-        console.log('hit route to persist chivalry: ', req.body)
-        db.Likes.create({
-            chivalry: req.body.chivalry,
-            userID: req.body.userID
-        }).then((chivalry) => {
-            res.json(chivalry)
+//Route for deleting a profile
+    app.delete("/api/profile", function(req, res) {
+        console.log("nooo");
+        db.Profile.destroy({
+            where: { email: req.params.email }
+        }).then(function(data) {
+            console.log()
+            res.json(data);
         })
-    })
-
-    app.post("/api/favorites", function(req, res) {
-        db.Likes.findAll({
-            where: { userID: req.body.userID }
-        }).then((response) => {
-            res.json(response)
-        })
-    })
+        .catch(function(err) {
+            console.log(err);
+            res.status(401).json(err);
+        });
+    });
 };
+// //To create and store likes....we store likes but we only show matches
+//     app.post("/api/likes", function(req, res) {
+//         db.Likes.create({
+//            //need to tell user a that user b liked them and user c too
+//         });
+//             res.json(res)
+//         });
+
+// //To show matches
+//     app.post("/api/matches", function(req, res) {
+//        db.Likes.findAll({
+//              where: { email 1 equals email 2 }
+//         }).then(function(data) {
+//             console.log("help")
+//             res.json(data);
+//         })
+//     })
+// };
+
+
+//To create and store messages
+//To retrive and show matches
+//To create and store violations
+//To create and store successes
+//To retrieve and show violations
+//To retrieve and show successes
