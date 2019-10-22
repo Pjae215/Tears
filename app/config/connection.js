@@ -1,6 +1,9 @@
 // Dependencies and Variables
 var mysql = require("mysql");
+var express = require('express')
 var PORT = process.env.PORT || 3000;
+var app = express()
+var models = require('../models')
 
 //Set up MySQL connection for local access if server cannot access Jawsdb
 if(process.env.JAWSDB_URL){

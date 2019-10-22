@@ -1,13 +1,15 @@
 // Requiring 
 var db = require("../models");
-var passport = require("../config/passport/passport");
+// require('./auth')
+
 
 
 
 module.exports = function(app) {
 //Using the passport.authenticate middleware with our local strategy.
 //Validated users returns profile data
-    app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    app.post('/login', //passport.authenticate('local'), 
+    function(req, res) {
         console.log(req.User);
     res.json(db.Profile); });
 
@@ -18,7 +20,8 @@ module.exports = function(app) {
     });
         
 //Validated new user sends login data to db
-    app.post("/api/signup", passport.authenticate("local"), function(req, res) {
+    app.post("/api/signup", //passport.authenticate("local"), 
+    function(req, res) {
         console.log("signingup");
         db.User.create({
                 email: req.body.email,
@@ -64,6 +67,21 @@ module.exports = function(app) {
             res.status(401).json(err);
             });
     });
+//Route for getting user profile
+app.get("/api/profile", function(req, res) {
+    if (req.email) {
+        console.log("Getting" + req.email)
+        db.User.findOne({
+            where: { email: req.params.email }
+        }).then(function(data) {
+        console.log(data)
+            res.json(data)
+        })
+    } else {
+        console.log("invalid email")
+        res.end()
+    }
+})
 
 //Route for deleting a profile
     app.delete("/api/profile", function(req, res) {

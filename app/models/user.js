@@ -43,13 +43,14 @@ module.exports = function(sequelize, Sequelize) {
  
     });
 
-    User.associate = function(models) {
-//when a user is deleted its data should be removed from all tables      
-        User.belongsTo(models.Prefs, models.Likes, models.Profile, {
-          onDelete: "cascade"
-        });
-      };
-   
+//     User.associate = function(models) {
+// //when a user is deleted its data should be removed from all tables      
+//         User.belongsTo(models.Prefs, models.Likes, models.Profile, {
+//           onDelete: "cascade"
+//         });
+//       };
+
+
     return User;
  
 }

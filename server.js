@@ -7,10 +7,14 @@ var env = require('dotenv').config()
 var exphbs = require('express-handlebars')
 var mysql = require("mysql");
 
+
+require('./app/config/connection')
+
+
  
  
 //For BodyParser
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
  
  
@@ -37,10 +41,11 @@ var models = require("./app/models");
 
 require("./app/routes/apiRoutes")(app);
 require("./app/routes/htmlRoutes")(app);
-// require('./app/routes/auth.js')(app,passport);
+// require('./app/routes/auth.js')(app);
+// require('./app/routes/auth.js')(passport);
  
  
 //load passport strategies
-require('./app/config/passport/passport.js')(passport, models.user);
+// require('./app/config/passport/passport.js')(passport, models.user);
  
  
