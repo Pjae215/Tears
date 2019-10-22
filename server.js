@@ -49,3 +49,13 @@ require("./app/routes/htmlRoutes")(app);
 // require('./app/config/passport/passport.js')(passport, models.user);
  
  
+// Establishing connection
+app.listen(PORT, function(err) {
+ 
+    if (!err)
+ 
+        console.log("Site is live... Visit localhost:"+ PORT);
+         
+    else console.log(err)
+ 
+});

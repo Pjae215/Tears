@@ -8,9 +8,9 @@ var path = require("path");
 module.exports = function(app) {
  
 //Routes to Home page
-    app.get("/api", function(req, res) {
+    app.get("/", function(req, res) {
         console.log('going home')
-        res.render("index.html");});
+        res.render("index");});
 
     app.get("/api/logout", function(req, res) {
         console.log('logout')
