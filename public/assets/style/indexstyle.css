@@ -269,6 +269,25 @@ color: white;
   object-fit: cover;
 } */
 
+.malepreferences{position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 10rem 0;
+  background-color: orange;
+  visibility: hidden;
+}
+
+.preferences{position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 10rem 0;
+  background-color: aqua;
+  visibility: hidden;
+}
+
+
 #left{
   float:left;
   padding-left:10px;

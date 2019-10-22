@@ -8,15 +8,14 @@ var path = require("path");
 module.exports = function(app) {
  
 //Routes to Home page
-    app.get("/", function(req, res) {
+    app.get("/api", function(req, res) {
         console.log('going home')
-        res.render("index");});
-    app.get("/api/signin", function(req, res) {
+        res.render("index.html");});
+
+    app.get("/api/logout", function(req, res) {
         console.log('logout')
-        res.redirect("index");});
-    app.get("/", function(req, res) {
-        console.log('logout')
-        res.redirect("index");});
+        res.redirect("index.html");});
+    
     
 
 //Routes to profile page
@@ -24,7 +23,11 @@ module.exports = function(app) {
         console.log("here");
     res.render("profile"); });
 
-    app.get("/api/signup/prefs/profile", function(req, res) {
+    app.get("/api/signup/preferences/profile", function(req, res) {
+        console.log("tomato");
+    res.render("profile"); });
+
+    app.get("/api/signup/malepreferences/profile", function(req, res) {
         console.log("tomato");
     res.render("profile"); });
 
@@ -34,15 +37,13 @@ module.exports = function(app) {
     res.render("signup"); });
 
 //Routes to preferences page
-    app.get("/api/signup/prefs", function(req, res) {
+    app.get("/api/signup/preferences", function(req, res) {
         console.log("tea");
-        res.render("prefs"); });
-    app.get("/api/signin/prefs", function(req, res) {
-        console.log("yum");
-        res.render("prefs"); });
-    app.get("/api/signin/profile/prefs", function(req, res) {
+        res.render("signup/preferences"); });
+
+    app.get("/api/signup/malepreferences", function(req, res) {
         console.log("ok");
-        res.render("prefs"); });
+        res.render("signup/malepreferences"); });
 
 // Render 404 page for any unmatched routes
     app.get("*", function(req, res) {
