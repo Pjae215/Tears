@@ -1,15 +1,9 @@
-/* .masthead {
+.masthead {
     position: relative;
     width: 100%;
     height: auto;
     min-height: 35rem;
     padding: 10rem 0;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.3)), color-stop(75%, rgba(22, 22, 22, 0.7)), to(#161616)), url("../images/107827cd28810fe092fda09440a27228--portrait-photography-tips-photography-ideas.jpg");
-    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../images/107827cd28810fe092fda09440a27228--portrait-photography-tips-photography-ideas.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
   }
 
   .content {
@@ -128,4 +122,4 @@
           outline: none;
           border-bottom: 0.25rem solid red;
         }
-      } */
+      }
