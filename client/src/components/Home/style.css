@@ -1,0 +1,46 @@
+.masthead {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 10rem 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.3)), color-stop(75%, rgba(22, 22, 22, 0.7)), to(#161616)), url("../images/107827cd28810fe092fda09440a27228--portrait-photography-tips-photography-ideas.jpg");
+    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../images/107827cd28810fe092fda09440a27228--portrait-photography-tips-photography-ideas.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
+  .content {
+    font-family: 'acumin-pro-extra-condensed', sans-serif;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    height: 50vw;
+    color: white;
+  }
+  .content h2 {
+    font-size: 1.5em;
+    font-weight: 100;
+    line-height: 1.55;
+    margin-bottom: -.35em;
+    padding-top: 6.5em;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+  }
+  span {
+    display: block;
+  }
+  .content h1 {
+    font-size: 5.2em;
+    margin-bottom: 1.5%;
+    text-transform: uppercase;
+  }
+  

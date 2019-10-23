@@ -12,7 +12,7 @@ module.exports = function(app) {
         console.log('going home')
         res.render("index");});
 
-    app.get("/api/logout", function(req, res) {
+    app.get("/logout", function(req, res) {
         console.log('logout')
         res.redirect("index.html");});
     
