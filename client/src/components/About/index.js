@@ -1,11 +1,12 @@
 import React from "react";
 
-function About() {
-  return (
-    <div className="jumbotron card-container">
-      About section
-    </div>
-  );
-}
 
-export default About;
+
+export const About = () => (
+  <div>
+    <h2>About</h2>
+  
+    <p>About dating</p>
+    
+  </div>
+  );
