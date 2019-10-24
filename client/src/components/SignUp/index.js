@@ -24,7 +24,7 @@ export const SignUp = () => (
         <Form>
             <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control id="email" type="email" placeholder="Enter email" />
                 <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                 </Form.Text>
@@ -33,7 +33,7 @@ export const SignUp = () => (
             <Form.Row>
                 <Form.Group as={Col} controlId="formGridGender">
                     <Form.Label>Gender</Form.Label>
-                    <Form.Control as="select">
+                    <Form.Control as="select" id="gender" >
                         <option>Choose...</option>
                         <option>Male</option>
                         <option>Female</option>
@@ -42,33 +42,33 @@ export const SignUp = () => (
 
                 <Form.Group as={Col} controlId="formGridUsername">
                     <Form.Label>UserName</Form.Label>
-                    <Form.Control type="text" placeholder="Enter a display name" />
+                    <Form.Control id="username" type="text" placeholder="Enter a display name" />
                 </Form.Group>
             </Form.Row>
 
             <Form.Row>
                 <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control id="password" type="password" placeholder="Password" />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Verify Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password2" />
+                    <Form.Control id="password2" type="password" placeholder="Password2" />
                 </Form.Group>
             </Form.Row>
 
             <Form.Row>
                 <Form.Group as={Col} controlId="formGridZipMonth">
                     <Form.Label>Birth Month</Form.Label>
-                    <Form.Control placeholder="MM Format" />
+                    <Form.Control id="month" placeholder="MM Format" />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridDay">
                     <Form.Label>Day of Month</Form.Label>
-                    <Form.Control placeholder="DD Format" />
+                    <Form.Control id="day"  placeholder="DD Format" />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridYear">
                     <Form.Label>Birth Year</Form.Label>
-                    <Form.Control placeholder="YYYY Format" />
+                    <Form.Control id="year" placeholder="YYYY Format" />
                 </Form.Group>
             </Form.Row>
 

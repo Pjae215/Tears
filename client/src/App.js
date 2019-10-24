@@ -8,7 +8,7 @@ import {Layout} from './components/Layout';
 import {NavigationBar} from './components/Navbar';
 import {SignIn} from './components/SignIn';
 import {SignUp} from './components/SignUp';
-import {Footer} from './components/Footer';
+// import {Footer} from './components/Footer';
 
 
 class App extends Component {
@@ -28,7 +28,6 @@ class App extends Component {
           <Route component= {NoMatch} />
         </Switch>
         </Router>
-        <Footer/>
         </Layout>
       </React.Fragment>
      

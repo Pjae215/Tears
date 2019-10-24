@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled from 'styled-components';
-import HomeImage from '../../assets/HomeImage.jpg';
+import HomeImage from '../../Images/HomeImage.jpg';
 
 const Styles = styled.div`
 body{
