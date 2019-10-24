@@ -1,10 +1,13 @@
 import React from "react";
-
+import {FooterSection, FooterLinkList} from 'react-mdl';
 
     export const Footer = () => (
-      <footer className="bg-black small text-center text-white-50">
-        <div className="container">
-          Copyright © Paula Jordan 2019
-        </div>
-      </footer>
+      <Footer size="mini">
+        <FooterSection type="left" logo="Title">
+        <FooterLinkList>
+            <a href="/">Help</a>
+            <a href="/">Privacy & Terms</a>
+        </FooterLinkList>
+        </FooterSection>
+        </Footer>
     )

@@ -11,7 +11,6 @@ import {SignUp} from './components/SignUp';
 import {Footer} from './components/Footer';
 
 
-
 class App extends Component {
   render() {
     return (
