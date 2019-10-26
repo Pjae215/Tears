@@ -5,6 +5,11 @@ var express = require('express')
 var PORT = process.env.PORT || 3001;
 var app = express()
 var models = require('./app/models');
+const proxy = require('http-proxy-middleware');
+
+app.use(proxy('/api/**', { target: 'http://localhost:5000' }));
+        app.use(proxy('/otherApi/**', { target: 'http://localhost:5000' }));
+
 
 //Set up MySQL connection for local access if server cannot access Jawsdb
 if(process.env.JAWSDB_URL){
@@ -26,6 +31,7 @@ app.listen(PORT, function(err) {
         console.log("Site is live... Visit localhost:"+ PORT); 
     else console.log(err)
 });
+
 
 //Syncing models to db
 models.sequelize.sync().then(function() {
