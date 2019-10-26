@@ -5,10 +5,11 @@ var express = require('express')
 var PORT = process.env.PORT || 3001;
 var app = express()
 var models = require('./app/models');
-const proxy = require('http-proxy-middleware');
 
-app.use(proxy('/api/**', { target: 'http://localhost:5000' }));
-        app.use(proxy('/otherApi/**', { target: 'http://localhost:5000' }));
+
+require('http-proxy-middleware');
+
+
 
 
 //Set up MySQL connection for local access if server cannot access Jawsdb
