@@ -2,7 +2,7 @@ import React from "react";
 // import {Link} from "react-router-dom"
 import {Jumbotron as Jumbo, Container} from 'react-bootstrap';
 import styled from 'styled-components';
-import messyhairImage from '../../assets/messyhairImage.jpg';
+import {messyhairImage} from '../../assets/messyhairImage.jpg';
 
 const Styles = styled.div`
 .jumbo{

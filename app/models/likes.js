@@ -10,12 +10,12 @@ module.exports = function(sequelize, Sequelize) {
                 }}
     });
 
-    Likes.associate = function(models) {
-//no profile can exist without a user
-            Likes.hasOne(models.User, {
-              foreignkey: {
-                  allnowNull: false}
-            });
-          };
+//     Likes.associate = function(models) {
+// //no profile can exist without a user
+//             Likes.hasOne(models.User, {
+//               foreignkey: {
+//                   allnowNull: false}
+//             });
+//           };
     return Likes
 }

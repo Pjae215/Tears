@@ -50,6 +50,11 @@ module.exports = function(app) {
         res.render("404");
         });
 
-   
+//Route for logging user out
+app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
+    });
+        
     
 };
