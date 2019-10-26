@@ -27,14 +27,17 @@ const Styles = styled.div`
 }
 `;
 
-export const Jumbotron = () => (
-<Styles>
-    <Jumbo fluid className='Jumbo'>
-        <div className='overlay'></div>
-        <Container>
-            <h2>Hello World</h2>
-            <p>This should be a picture</p>
-        </Container>
-    </Jumbo>
-</Styles>
-)
+function Jumbotron() {
+    return (
+        <Styles>
+        <Jumbo fluid className='Jumbo'>
+            <div className='overlay'></div>
+            <Container>
+                <h2>Hello World</h2>
+                <p>This should be a picture</p>
+            </Container>
+        </Jumbo>
+    </Styles>)
+  }
+  
+  export default Jumbotron;

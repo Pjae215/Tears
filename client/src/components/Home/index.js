@@ -26,9 +26,9 @@ body{
 }
 `;
 
-
-export const Home = () => (
-  <Styles>
+function Home() {
+  return (
+    <Styles>
 <div>
   <h2>Chivalry</h2>
 
@@ -37,18 +37,7 @@ export const Home = () => (
   
 </div>
 </Styles>
-);
+  );
+}
 
-
-
-
-// either option works just make sure its the open parenthesis is on a single line with the function
-//function Home() {
-//     return (
-//       <div>home
-//       </div>
-//     );
-//   }
-  
-//   export default Home;
-  
+export default Home;

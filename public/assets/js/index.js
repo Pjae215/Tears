@@ -1,25 +1,62 @@
 
+// //Matching profiles...looping through one model of users
+
+// $(document).ready(function() {
+
+// var matches = [];
+// var profile;
+
+// function matching () {
+//         for (var i = 0; i< Profile.length; i++){
+
+//         if (req.gender === profile.gender) {
+
+//         matchtotals(); 
+//         };
+
+//         alert("Out of matches...Check back later")
+//         };
+
+// function matchtotals () {
+//         for (var i = 0; i < (profiles.length - 1); i++) {
+
+//                 var score = profiles[i].totals;
+//                 var minscore = 0;
+//                 var minscrieria = 65;
+//                 var meetscriteria = score - minscore;
+
+//         if (meetscriteria >= minscrieria) {
+                
+//                 matches.push(profile); 
+//                 }
+
+//         alert("Out of matches...Check back later")
+
+//         }};}
+
+//         matching();
+// });
 
 
-        // // Site Nav
-        // $(".chivalry-nav-open").on("click", function(){
-        //     $(".chivalry-nav").show();
-        // });
-        // $(".chivalry-nav-close").on("click", function(){
-        //     $(".chivalry-nav").hide();
-        // });
+// //ok so each preference will have a value for each question
+// //so like gender male= 10pts gender female =10pts
+// //prefer kids = 10pts prefer no kids = 5pts
+// //if we assign a weight to each category so
+// //so gender will always be 100% or 0% match
+// //kids will be 20% so of male prefers kids his score in
+// //that cat will be 15pts but if woman prefers no kids her
+// //score will be 5pts so out of 20% they are a
 
-        // //Carousel
 
-        // $(document).ready(function ($) {
-        //     var options = {
-        //         $AutoPlay: 1,                //[Optional] Auto play or not, to enable slideshow, this option must be set to greater than 0. Default value is 0. 0: no auto play, 1: continuously, 2: stop at last slide, 4: stop on click, 8: stop on user navigation (by arrow/bullet/thumbnail/drag/arrow key navigation)
-        //         $PlayOrientation: 2,         //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
-        //         $DragOrientation: 0          //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
-        //     };
-        //     var jssor_slider1 = new $JssorSlider$('slider1_container', options);
-        // });
+// //men and woman will have the same preferences, each question will have an equal value so male = 5pts and woman = 5pts...there has to be a 100% opposite or the profile is skipped
+// // male chooses prefer kids option 5pts 
+// //woman does not choose prefer no kids 0pts
+// //male chooses has kids 5pts
+// //kids category will be weighted to say hey this person is
 
+
+// //kids category will be compared option by option 
+// //then each then compare on percent match
 
 
         

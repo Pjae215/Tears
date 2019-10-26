@@ -32,13 +32,13 @@ module.exports = function(sequelize, Sequelize) {
         gender: {
             type: Sequelize.STRING,
             allowNull: false
-        },
-        dob: {
-            type: Sequelize.DATE,
-            validate: {
-                isDATE: true
-            }
         }
+        // dob: {
+        //     type: Sequelize.DATE,
+        //     validate: {
+        //         isDATE: true
+        //     }
+        // }
  
  
     });

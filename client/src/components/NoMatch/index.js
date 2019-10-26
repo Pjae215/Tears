@@ -1,10 +1,15 @@
 import React from "react";
 
-export const NoMatch = () => (
-  <div>
+
+function NoMatch () {
+    return (
+      <div>
     <h2>Yikes</h2>
   
     <p>Page Not Found</p>
     
   </div>
-  );
+    );
+  }
+  
+  export default NoMatch;

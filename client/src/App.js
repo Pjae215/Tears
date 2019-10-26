@@ -1,20 +1,40 @@
-import React, { Component } from "react";
+import React, { Component, Register } from "react";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Home} from './components/Home';
-import {About} from './components/About';
-import {Contact} from './components/Contact';
-import {NoMatch} from './components/NoMatch';
-import {Layout} from './components/Layout';
-import {NavigationBar} from './components/Navbar';
-import {SignIn} from './components/SignIn';
-import {SignUp} from './components/SignUp';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import NoMatch from './components/NoMatch';
+import Layout from './components/Layout';
+import NavigationBar from './components/Navbar';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import axios from 'axios';
 // import {Footer} from './components/Footer';
 
 
+
 class App extends Component {
+  state = {}
+//Put the functions that communicate with the server here:
+//SignUp New User
+handleFormSubmit = (req) => {
+  console.log('this is from the app component', req)
+  axios.post('/user', req).then(response => {
+    console.log(response)
+  })
+
+  return (
+    <Register handleFormSubmit={this.handleFormSubmit}/>
+  );
+}
+
+
+
+
+//this is what is rendered on the front end 
   render() {
     return (
-      //instead of a wrapper we'll use the built in component of fragment
+      
       <React.Fragment>
         <NavigationBar/>
         <Layout>

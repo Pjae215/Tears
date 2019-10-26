@@ -8,7 +8,7 @@ var db = require("../models");
 module.exports = function(app) {
 //Using the passport.authenticate middleware with our local strategy.
 //Validated users returns profile data
-    app.post('/login', //passport.authenticate('local'), 
+    app.post('/SignIn', //passport.authenticate('local'), 
     function(req, res) {
         console.log(req.User);
     res.json(db.Profile); });
