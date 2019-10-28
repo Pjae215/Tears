@@ -1,5 +1,5 @@
 // Requiring 
-var db = require("../models");
+var db = require("./models");
 // require('./auth')
 
 
@@ -7,15 +7,15 @@ var db = require("../models");
 
 module.exports = function(app) {
 //Using the passport.authenticate middleware with our local strategy.
-//Validated users returns profile data
-    app.post('/profile', //passport.authenticate('local'), 
+//Validated existing users returns profile data
+    app.post('/signin', //passport.authenticate('local'), 
     function(req, res) {
         console.log(req.User);
     res.json(db.Profile); });
 
 
 //Validated new user sends login data to db
-    app.post("/users", //passport.authenticate("local"), 
+    app.post("/signup", //passport.authenticate("local"), 
     function(req, res) {
         console.log("signingup");
         db.User.create({
@@ -45,23 +45,6 @@ module.exports = function(app) {
             });
     });
 
-//For updating preferences
-    app.put("/prefs", function(req, res) {
-        console.log("change");
-        db.Prefs.update(
-            req.body,
-            {where:{
-                email: req.body.email
-            }})
-        .then(function() {
-            console.log(db.email);
-            res.json(db.Prefs);
-            })
-        .catch(function(err) {
-            console.log(err);
-            res.status(401).json(err);
-            });
-    });
 //Route for getting user profile
 app.get("/profile", function(req, res) {
     if (req.email) {
@@ -93,6 +76,25 @@ app.get("/profile", function(req, res) {
         });
     });
 };
+
+// //For updating preferences
+//     app.put("/prefs", function(req, res) {
+//         console.log("change");
+//         db.Prefs.update(
+//             req.body,
+//             {where:{
+//                 email: req.body.email
+//             }})
+//         .then(function() {
+//             console.log(db.email);
+//             res.json(db.Prefs);
+//             })
+//         .catch(function(err) {
+//             console.log(err);
+//             res.status(401).json(err);
+//             });
+//     });
+
 // //To create and store likes....we store likes but we only show matches
 //     app.post("/api/likes", function(req, res) {
 //         db.Likes.create({

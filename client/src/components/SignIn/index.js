@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, Col} from "react";
 import {Form, Button} from 'react-bootstrap';
 import styled from 'styled-components';
 // import {chivalry} from 'chivalry.png';
@@ -16,6 +16,7 @@ const Styles = styled.div`
   .Label{
     color: black;
     &:hover{ color:red; }
+  
   }
   `; 
 
@@ -46,23 +47,25 @@ const Styles = styled.div`
 
     render() {
   return(
+    
     <Styles>
 <Form>
-  <Form.Group controlId="formGridEmail">
+<Form.Row>
+  <Form.Group as={Col} controlId="formGridEmail">
   <Form.Label>Email</Form.Label>
   <Form.Control name="email" type="email" placeholder="Enter email" value={this.state.email}
           onChange={this.handleInputChange} />
                 <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                 </Form.Text>
-    </Form.Group>
+  </Form.Group>
 
-  <Form.Group controlId="formUserPassword">
+  <Form.Group as={Col} controlId="formUserPassword">
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" placeholder="Enter your Password" id='password'value={this.state.email}
           onChange={this.handleInputChange}/>
   </Form.Group>
-  
+  </Form.Row>
   <Button variant="primary" type="submit" onClick={this.handleFormSubmit}>
     View Your Profile
   </Button>

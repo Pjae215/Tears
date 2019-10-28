@@ -1,16 +1,24 @@
 // Dependencies and constiables
 
+require("dotenv").config();
 var mysql = require("mysql");
 var express = require('express')
 var PORT = process.env.PORT || 3001;
 var app = express()
-var models = require('./app/models');
-
-
-require('http-proxy-middleware');
+var models = require('./models');
+// var routes = require('./routes');
 
 
 
+// Middleware
+// require('http-proxy-middleware');
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+
+//Routes
+
+// app.use(routes);
 
 //Set up MySQL connection for local access if server cannot access Jawsdb
 if(process.env.JAWSDB_URL){
@@ -47,14 +55,6 @@ module.exports = connection;
 
 
  
-
-
- 
- 
-// //For BodyParser
-// app.use(bodyParser.urlencoded({extended: false}));
-// app.use(bodyParser.json());
- 
  
 // // For Passport
 // app.use(session({
@@ -65,17 +65,8 @@ module.exports = connection;
 // app.use(passport.initialize());
 // app.use(passport.session()); // persistent login sessions
  
-// //For HTML
-// app.use(express.static( "public"));
-// // app.get('/', function(req, res) {
-// //   res.send('index');
-// //   });
 
-
-// //Models
-// const models = require("./app/models");
- 
-// //Routes
+// 
 
 // require("./app/routes/apiRoutes")(app);
 // require("./app/routes/htmlRoutes")(app);
@@ -86,14 +77,3 @@ module.exports = connection;
 // //load passport strategies
 // // require('./app/config/passport/passport.js')(passport, models.user);
  
- 
-// // Establishing connection
-// app.listen(PORT, function(err) {
- 
-//     if (!err)
- 
-//         console.log("Site is live... Visit localhost:"+ PORT);
-         
-//     else console.log(err)
- 
-// });
