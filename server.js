@@ -52,9 +52,6 @@ models.sequelize.sync().then(function() {
 // Export connection for our ORM to use.
 module.exports = connection;
 
-
-
- 
  
 // // For Passport
 // app.use(session({

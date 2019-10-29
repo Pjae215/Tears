@@ -1,19 +1,12 @@
-// import React from "react";
-// import {FooterSection, FooterLinkList} from 'react-mdl';
+import React from "react";
+import "./style.css";
 
+function Footer() {
+  return (
+    <footer className="footer">
+      <span>Created { new Date().getFullYear() }</span>
+    </footer>
+  );
+}
 
-
-// function Footer() {
-//     return (
-//         <footer size="mini">
-//         <FooterSection type="left" logo="Title">
-//         <FooterLinkList>
-//           <a href="/">Help</a>
-//           <a href="/">Privacy & Terms</a>
-//          </FooterLinkList>
-//         </FooterSection>
-//         </footer>
-//     );
-//   }
-  
-//   export default Footer;
+export default Footer;

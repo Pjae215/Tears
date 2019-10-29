@@ -9,11 +9,6 @@ import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl'
 // //don't forget the hash over the d in div
 // const Styles = styled.div`
 
-// div {
-//     height: '300px', 
-//     position: 'relative';
-// }
-
 //   Form {
 //     padding-top: 20px;
 //     background: white;
@@ -25,11 +20,6 @@ import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl'
 //     color: black;
 //     &:hover{ color:red; }
 //   }
-
-//   Layout {
-//     background-image: url(picOne), url(picTwo);
-//     background-position: right bottom, left top;
-//     background-repeat: no-repeat, repeat;
 
 //   }
 //   `; 
@@ -51,15 +41,6 @@ function NavigationBar () {
                 <a href='/Contact'>Contact</a>
             </Navigation>
         </Header>
-        <Drawer title="Title">
-            <Navigation>
-                <a href='/'>Home</a>
-                <a href='/SignIn'>SignIn</a>
-                <a href='/SignUp'>SignUp</a>
-                <a href='/About'>About</a>
-                <a href='/Contact'>Contact</a>
-            </Navigation>
-        </Drawer>
         <Content />
     </Layout>
 </div>
