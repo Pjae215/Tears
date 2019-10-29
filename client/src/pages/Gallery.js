@@ -5,7 +5,7 @@ import CardContainer from "../components/CardContainer";
 import Row from "../components/Row";
 
 class Gallery extends Component {
-  varructor(props) {
+  Constructor(props) {
     super(props);
     this.state = {
       languages: [],
@@ -78,7 +78,7 @@ class Gallery extends Component {
     return (
       <UserContext.Provider value={this.state}>
         <div>
-          <h1 className="text-center">Welcome to LinkedUp</h1>
+          <h1 className="text-center">Welcome to Chivalry</h1>
           <h3 className="text-center">Click on the arrows to browse users</h3>
           <Row>
             <CardContainer />
