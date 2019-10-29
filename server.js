@@ -11,7 +11,7 @@ var models = require('./models');
 
 
 // Middleware
-// require('http-proxy-middleware');
+require('http-proxy-middleware');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
