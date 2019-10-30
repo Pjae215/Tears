@@ -9,6 +9,7 @@ import NavigationBar from './components/Navbar';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import axios from 'axios';
+import Gallery from './pages/Gallery'
 // import {Footer} from './components/Footer';
 
 
@@ -43,9 +44,11 @@ handleFormSubmit = (req) => {
           <Route exact path ="/" component = {Home} />
           <Route exact path ="/SignIn" component = {SignIn} />
           <Route exact path ="/SignUp" component = {SignUp} />
+          <Route exact path ="/Matches" component = {Gallery} />
           <Route exact path ="/About" component = {About} />
           <Route exact path ="/Contact" component = {Contact} />
           <Route component= {NoMatch} />
+          
         </Switch>
         </Router>
         </Layout>

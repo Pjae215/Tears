@@ -32,20 +32,18 @@ module.exports = function(sequelize, Sequelize) {
         gender: {
             type: Sequelize.STRING,
             allowNull: false
-        }
-        // dob: {
-        //     type: Sequelize.DATE,
-        //     validate: {
-        //         isDATE: true
-        //     }
-        // }
+        },
+         dob: {
+            type: Sequelize.INTEGER,
+             allowNull: false;
+         }
  
  
     });
 
 //     User.associate = function(models) {
 // //when a user is deleted its data should be removed from all tables      
-//         User.belongsTo(models.Prefs, models.Likes, models.Profile, {
+//         User.belongsTo(models.Prefs, {
 //           onDelete: "cascade"
 //         });
 //       };

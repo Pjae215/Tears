@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import UserContext from "../utils/userContext";
+import UserContext from "../pages/userContext";
 import CardContainer from "../components/CardContainer";
 import Row from "../components/Row";
 
 class Gallery extends Component {
-  Constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
-      languages: [],
       user: {},
       users: [],
       userIndex: 0,
@@ -61,16 +60,13 @@ class Gallery extends Component {
   };
 
   loadUsers = () => {
-    API.getLanguagesList()
-      .then(languages => {
-        return API.getUsersByLanguage(languages[0]).then((users) => {
+    API.getUsersByEmail()
+      .then(users => {
           return this.setState({
-            languages: languages,
             users: users,
             user: users[0]
           });
-        });
-      })
+        })
       .catch(err => console.log(err));
   };
 
@@ -78,8 +74,8 @@ class Gallery extends Component {
     return (
       <UserContext.Provider value={this.state}>
         <div>
-          <h1 className="text-center">Welcome to Chivalry</h1>
-          <h3 className="text-center">Click on the arrows to browse users</h3>
+          <h3 className="text-center">Could she be the one...?</h3>
+          <h5 className="text-center">Click on the arrows to browse users</h5>
           <Row>
             <CardContainer />
           </Row>

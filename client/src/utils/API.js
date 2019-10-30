@@ -1,27 +1,19 @@
 import axios from "axios";
 
-const languages = [
-  "JavaScript",
-  "Python",
-  "C",
-  "Ruby",
-  "Java",
-  "PHP",
-  "C#"
-];
+
+
 // Export an object containing methods we'll use for accessing the random user API
 export default {
-  getUsersByLanguage: function(language) {
+  getUsersByEmail: function() {
     return new Promise((resolve, reject)=> {
-      axios.get("https://randomuser.me/api/?results=15").then((res)=> {
+      axios.get("https://randomuser.me/api/?gender=female&results=15").then((res)=> {
         const users = res.data.results;
         const results = users.map((user) => {
           return {
-            firstname: user.name.first,
-            lastname: user.name.last,
+            displayName: user.login.username,
+            age: user.dob.age,
             email: user.email,
-            image: user.picture.large,
-            language: language,
+            image: user.picture.large
           }
         })
         resolve(results);
@@ -29,9 +21,9 @@ export default {
     })
   },
   // Return a Promise to simulate an async call
-  getLanguagesList: function() {
+  getUsers: function() {
     return new Promise((resolve)=> {
-      resolve(languages);
+      resolve();
     });
   }
 };

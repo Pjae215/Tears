@@ -11,7 +11,7 @@ module.exports = function(app) {
     app.post('/signin', //passport.authenticate('local'), 
     function(req, res) {
         console.log(req.User);
-    res.json(db.Profile); });
+    res.json(db.User); });
 
 
 //Validated new user sends login data to db
@@ -22,7 +22,7 @@ module.exports = function(app) {
                 email: req.body.email,
                 password: req.body.password,
                 username: req.body.username,
-                // birthday: req.body.dob,
+                birthday: req.body.dob,
                 gender: req.body.gender,
                 status: req.body.status
             })
