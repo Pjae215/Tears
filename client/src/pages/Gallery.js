@@ -75,7 +75,6 @@ class Gallery extends Component {
       <UserContext.Provider value={this.state}>
         <div>
           <h3 className="text-center">Could she be the one...?</h3>
-          <h5 className="text-center">Click on the arrows to browse users</h5>
           <Row>
             <CardContainer />
           </Row>

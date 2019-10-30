@@ -10,10 +10,10 @@ export default {
         const users = res.data.results;
         const results = users.map((user) => {
           return {
-            displayName: user.login.username,
+            name: user.name.first,
             age: user.dob.age,
             email: user.email,
-            image: user.picture.large
+            image: user.picture.medium
           }
         })
         resolve(results);

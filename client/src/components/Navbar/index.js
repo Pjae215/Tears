@@ -1,51 +1,38 @@
 import React from "react";
-import {Layout, Header, Navigation, Content} from 'react-mdl'
-// import styled from 'styled-components';
-
-// const picOne = require('./bnwcuteeyes.jpg');
-// const picTwo = require('./bnwsoreneckguy.jpg');
-// const picThree = require('./bnwmessyhair.jpg');
-
-// //don't forget the hash over the d in div
-// const Styles = styled.div`
-
-//   Form {
-//     padding-top: 20px;
-//     background: white;
-//     height: 50px;
-//     position: relative;
-//   }
-
-//   .Label{
-//     color: black;
-//     &:hover{ color:red; }
-//   }
-
-//   }
-//   `; 
 
 
 function NavigationBar () {
       return(
 
-      /* Uses a transparent header that draws on top of the layout's background */
       
-<div style={{height: '300px', position: 'relative'}}>
-<Layout style={{background: 'url(http://www.getmdl.io/assets/demos/transparent.jpg) center / cover'}}>
-        <Header transparent title="Chivalry" style={{color: 'white'}}>
-            <Navigation>
-            <a href='/'>Home</a>
-                <a href='/SignIn'>SignIn</a>
-                <a href='/SignUp'>SignUp</a>
-                <a href='/About'>About</a>
-                <a href='/Contact'>Contact</a>
-            </Navigation>
-        </Header>
-        <Content />
-    </Layout>
-</div>
+<nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div className="container">
+      <h2 className="navbar-brand">CHIVALRY</h2>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarResponsive">
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item active">
+            <a className="nav-link" href='/SignIn'>SignIn</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href= '/SignUp'>SignUp</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/About">About</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/Contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   ); 
       };
   
 export default NavigationBar;
+
+

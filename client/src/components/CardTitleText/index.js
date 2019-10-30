@@ -5,8 +5,7 @@ function CardTitleText() {
   return (
     <UserContext.Consumer>
       {(context) => (
-        <h4>{context.capitalizeFirstLetter(context.user.username) +
-          " " + context.capitalizeFirstLetter(context.user.email)}</h4>
+        <h4>{context.capitalizeFirstLetter(context.user.name)}</h4>
       )} 
     </UserContext.Consumer>
   );

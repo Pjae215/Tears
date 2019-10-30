@@ -7,10 +7,7 @@ function CardBody() {
       {({ user }) => (
         <div>
           <h4>
-          Display Name: {user.username}
-          </h4>
-          <h4>
-          Email: {user.email}
+          Age: {user.age}
           </h4>
         </div>
       )}

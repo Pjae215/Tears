@@ -4,7 +4,7 @@ import "./style.css";
 
 function CardTitle() {
   return (
-    <div className="blue text-center">
+    <div className="black text-left">
       <CardTitleText />
     </div>
   );
