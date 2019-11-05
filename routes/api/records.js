@@ -9,7 +9,7 @@ router.route("/")
 // Matches with "/api/apps/:email"
 router
   .route("/:email")
-  .get(appController.findByEmail)
+  .get(appController.findById)
   .put(appController.update)
   .delete(appController.remove);
 

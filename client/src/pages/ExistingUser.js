@@ -10,12 +10,14 @@ class ExistingUser extends Component {
     password: ""
   };
 
-  componentDidMount() {
-    API.getUser()
-    .then(props => {
-        alert("Welcome Back..." + this.state.user + " Let's see your matches for today")
-        this.props.history.push ("/matches");
-      });
+  componentWillMount() {
+    API.getThisUser()
+    .then(response => {
+      this.setState({
+      username: response.data.username})
+      console.log(response)})
+    .catch(err => {
+      throw err; });
   }
 
   handleInputChange = event => {
@@ -34,15 +36,18 @@ class ExistingUser extends Component {
 
 
 handleformSubmit = () => {
-  API.getThisUser(data)
-  .then(response => {
-    this.setState({
-    username: response.data.username})
-    console.log(response.data)})
-  .catch(err => {
-    throw err; });
+  this.getUsername();
+  
 };
-
+// handleformSubmit = () => {
+//   API.getThisUser()
+//   .then(response => {
+//     this.setState({
+//     username: response.data.username})
+//     console.log(response)})
+//   .catch(err => {
+//     throw err; });
+// };
 
 
   render() {

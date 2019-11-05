@@ -9,6 +9,7 @@ import NewUser from './pages/NewUser';
 import Gallery from './pages/Gallery';
 import Wrapper from './components/Wrapper';
 import NoMatch from './components/NoMatch';
+import ExistingUser from './pages/ExistingUser'
 // import axios from 'axios';
 // import SignUp from './components/SignUp';
 
@@ -26,7 +27,7 @@ class App extends Component {
         <Router>
         <Switch>
           <Route exact path ="/" component = {Home} />
-          <Route exact path ="/SignIn" component = {SignIn} />
+          <Route exact path ="/SignIn" component = {ExistingUser} />
           <Route exact path = "/SignUp" component = {NewUser}/>
           <Route exact path ="/Matches" component = {Gallery} />
           <Route exact path ="/About" component = {About} />
