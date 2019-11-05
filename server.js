@@ -5,8 +5,8 @@ var mysql = require("mysql");
 var express = require('express')
 var PORT = process.env.PORT || 3001;
 var app = express()
-var models = require('./models');
-// var routes = require('./routes');
+var models = require("./models");
+var routes = require('./routes');
 
 
 
@@ -17,8 +17,14 @@ app.use(express.json());
 
 
 //Routes
+app.use(routes);
 
-// app.use(routes);
+//CORS
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 //Set up MySQL connection for local access if server cannot access Jawsdb
 if(process.env.JAWSDB_URL){

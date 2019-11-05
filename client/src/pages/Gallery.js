@@ -60,7 +60,7 @@ class Gallery extends Component {
   };
 
   loadUsers = () => {
-    API.getUsersByEmail()
+    API.getMatches()
       .then(users => {
           return this.setState({
             users: users,

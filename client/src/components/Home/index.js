@@ -24,20 +24,25 @@ body{
     z-index: -1;
 
 }
+.bg{
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 `;
 
 function Home() {
   return (
     <Styles>
 <div>
-  <h2>Chivalry</h2>
+  <h2>Chivalry</h2></div>
 
-  <p>Why do we use it?
- The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-  
-</div>
-</Styles>
+  <div className="bg"></div>
+  </Styles>
   );
 }
+
 
 export default Home;

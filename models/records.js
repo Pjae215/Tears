@@ -1,6 +1,6 @@
 module.exports = function(sequelize, Sequelize) {
  
-    var User = sequelize.define('User', {
+    var records = sequelize.define('records', {
  
         id: {
             autoIncrement: true,
@@ -33,9 +33,13 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.STRING,
             allowNull: false
         },
-         dob: {
+         age: {
             type: Sequelize.INTEGER,
-             allowNull: false;
+             allowNull: false
+         },
+         zipcode: {
+            type: Sequelize.INTEGER,
+             allowNull: false
          }
  
  
@@ -49,6 +53,6 @@ module.exports = function(sequelize, Sequelize) {
 //       };
 
 
-    return User;
+    return records;
  
 }

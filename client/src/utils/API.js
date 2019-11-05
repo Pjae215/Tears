@@ -1,10 +1,8 @@
 import axios from "axios";
 
-
-
 // Export an object containing methods we'll use for accessing the random user API
 export default {
-  getUsersByEmail: function() {
+  getMatches: function() {
     return new Promise((resolve, reject)=> {
       axios.get("https://randomuser.me/api/?gender=female&results=15").then((res)=> {
         const users = res.data.results;
@@ -20,10 +18,17 @@ export default {
       }).catch((err) => reject(err));
     })
   },
-  // Return a Promise to simulate an async call
-  getUsers: function() {
-    return new Promise((resolve)=> {
-      resolve();
-    });
+
+  // Gets all records
+  getAllUsers: function() {
+    return axios.get("/api/records");
+  },
+  // gets a record with the given email
+  getThisUser: function(email) {
+    return axios.get("/api/records/:" + email);
+  },
+  // Saves an book to the database
+  saveNewUser: function(postData) {
+    return axios.post("/api/records", postData);
   }
 };
